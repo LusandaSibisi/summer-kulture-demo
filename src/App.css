@@ -1,23 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   /* A summer pool water gradient background */
   background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
   font-family: 'Outfit', sans-serif;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .app {
   width: 100%;
+  min-height: 100vh;
   padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* --- HEADER STYLES --- */
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.user-header p {
+  margin: 0;
+  color: #333;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  width: auto;
+  background: #ef4444;
+  border-radius: 20px;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* --- TICKET CARD STYLES --- */
 .ticket-card {
   background: rgba(255, 255, 255, 0.95);
   max-width: 600px;
@@ -39,7 +74,6 @@ body {
 }
 
 .event-title {
-  /* That 3D Purple Vibe */
   font-size: 4rem;
   font-weight: 900;
   color: #9d50ff;
@@ -67,9 +101,9 @@ body {
   border: 1px solid #e2e8f0;
 }
 
+/* --- LINEUP STYLES --- */
 .lineup-section {
   margin: 30px 0;
-  /* The blue brush stroke vibe */
   background: #1e40af; 
   padding: 20px;
   border-radius: 15px;
@@ -96,8 +130,11 @@ body {
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 1px;
+  display: inline-block;
+  margin: 2px;
 }
 
+/* --- TICKET ACTION STYLES --- */
 .ticket-action {
   margin-top: 20px;
   display: flex;
@@ -141,23 +178,68 @@ button:hover {
   box-shadow: 0 15px 25px rgba(157, 80, 255, 0.4);
 }
 
-button:disabled {
-  background: #cbd5e1;
-  box-shadow: none;
-  cursor: not-allowed;
-  transform: none;
+/* --- LOGIN PAGE STYLES --- */
+.login-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.success-message {
-  color: #16a34a;
-  font-weight: 700;
-  background: #dcfce7;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-bottom: 15px;
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-top: 0;
+  color: #9d50ff;
+  font-size: 2rem;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.login-box button {
+  margin-top: 10px;
+}
+
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   font-size: 1.5rem;
   font-weight: 700;
   color: #1e40af;
