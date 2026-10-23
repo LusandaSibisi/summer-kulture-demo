@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SummerKulture.API.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SummerKulture.API.Controllers;
 

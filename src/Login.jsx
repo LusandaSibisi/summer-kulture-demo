@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Login({ onLoginSuccess }) {
+function Login({ onLoginSuccess, onSwitchToRegister }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -61,6 +61,9 @@ function Login({ onLoginSuccess }) {
           />
           <button type="submit">Log In</button>
         </form>
+        <p className="switch-auth">
+          Don't have an account? <span onClick={onSwitchToRegister}>Sign up here</span>
+        </p>
       </div>
     </div>
   )

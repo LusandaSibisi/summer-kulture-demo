@@ -98,4 +98,14 @@ public class UserService : IUserService
             FirstName = user.FirstName
         };
     }
+
+        public async Task<bool> DeleteUserAsync(Guid id)
+    {
+        var user = await _repository.GetUserByIdAsync(id);
+        if (user == null) return false; // User not found
+
+        _repository.DeleteUser(user);
+        await _repository.SaveChangesAsync();
+        return true;
+    }
 }

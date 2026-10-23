@@ -46,4 +46,14 @@ public class UsersController : ControllerBase
         var users = await _userService.GetAllUsersAsync();
         return Ok(users);
     }
+
+        [Authorize(Roles = "SuperUser")] // Only admins can delete users
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteUser(Guid id)
+    {
+        var success = await _userService.DeleteUserAsync(id);
+        if (!success) return NotFound(new { message = "User not found." });
+        
+        return Ok(new { message = "User deleted successfully." });
+    }
 }
